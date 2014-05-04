@@ -53,11 +53,5 @@
 	<artifactId>jcommon</artifactId>
 	<version>1.0.16</version>
     </dependency>
-    <dependency>
-      <groupId>com.mycompany</groupId>
-      <artifactId>diplom_1_29_2014</artifactId>
-      <version>1.0-SNAPSHOT</version>
-      <type>jar</type>
-    </dependency>
   </dependencies>
 </project>
