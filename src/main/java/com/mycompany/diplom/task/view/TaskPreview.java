@@ -6,11 +6,14 @@ import com.mycompany.diplom.subject.Subject;
 import com.mycompany.diplom.task.Task;
 import com.mycompany.diplom.task.TaskDao;
 import com.mycompany.diplom.task.TaskManager;
+import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Container;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -33,16 +36,18 @@ public class TaskPreview extends JPanel {
     public JPanel setTaskPreview(Task task) {
         this.task = task;
         JPanel panel = new JPanel();
+        BorderLayout borderLayout = new BorderLayout(15, 15);
         BoxLayout boxLayout = new BoxLayout(panel, BoxLayout.Y_AXIS);    
-        panel.setLayout(boxLayout);
+        panel.setLayout(borderLayout);
         
         JLabel label = new JLabel("" + task.getShortName());
         Font font = new Font("Arial",Font.PLAIN, 20);
         label.setFont(font);
         label.setAlignmentX(Container.CENTER_ALIGNMENT);
-        panel.add(label);
+        panel.setBorder(BorderFactory.createTitledBorder("Solve") );
+//        panel.add(label, BorderLayout.PAGE_START);
         
-        panel.add(Box.createVerticalStrut(15));
+//        panel.add(Box.createVerticalStrut(15));
         
         JTextArea deskriptionTaskArea = new JTextArea(task.getDescription());
         deskriptionTaskArea.setColumns(40);
@@ -53,24 +58,25 @@ public class TaskPreview extends JPanel {
         font=new Font("Arial",Font.PLAIN, 13);
         deskriptionTaskArea.setFont(font);
         deskriptionTaskArea.setAlignmentX(Component.CENTER_ALIGNMENT);
-        panel.add(new JScrollPane(deskriptionTaskArea));
+        panel.add(new JScrollPane(deskriptionTaskArea), BorderLayout.CENTER);
         
-        panel.add(Box.createVerticalStrut(15));
+//        panel.add(Box.createVerticalStrut(15));
 
         answerField = new JTextField(40);
         answerField.setAlignmentX(Component.CENTER_ALIGNMENT);
         font=new Font("Arial",Font.PLAIN, 13);
         answerField.setFont(font);
-        panel.add(answerField);
+      
+        JPanel confirmPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+//        panel.add(Box.createVerticalStrut(35));
         
-        panel.add(Box.createVerticalStrut(35));
-        
+        confirmPanel.add(answerField);
         JButton confirmButton = new JButton("Подтвердить!");
         font=new Font("Arial",Font.PLAIN, 13);
         confirmButton.setFont(font);
         confirmButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-        panel.add(confirmButton);
-        
+        confirmPanel.add(confirmButton);
+        panel.add(confirmPanel, BorderLayout.PAGE_END);
         ActionButton action = new ActionButton();
         confirmButton.addActionListener(action);
         

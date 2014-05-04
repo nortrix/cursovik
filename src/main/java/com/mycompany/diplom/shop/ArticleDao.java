@@ -22,7 +22,7 @@ public class ArticleDao {
     
     private String QUERY_ALL_SHOP_COMPONENTS = "SELECT ID, NAME, DESCRIPTION, COST FROM SHOP;";
     
-    public List<Article> allShopComponents () {
+    public List<Article> findAll () {
         ArrayList<Article> shopComponents = new ArrayList<Article>();
         try {
                         
@@ -51,7 +51,7 @@ public class ArticleDao {
 
     }
     
-    public void setPurchasesToDB (Integer lastPurchaseId, Integer profId, ArrayList<Integer> selecterRows) {
+    public void persistPurchases (Integer lastPurchaseId, Integer profId, ArrayList<Integer> selecterRows) {
         
         String QUERY_INSERT_PURCHASES = "INSERT INTO PURCHASE (ID, SHOP_ID, USER_ID) VALUES (" + lastPurchaseId + ", " + profId + ", " + ");";
         

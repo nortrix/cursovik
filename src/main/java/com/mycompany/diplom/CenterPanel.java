@@ -4,6 +4,7 @@
  */
 package com.mycompany.diplom;
 
+import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -23,7 +24,7 @@ public class CenterPanel extends JPanel {
     JTextArea textArea;
     
     public CenterPanel(){
-        this.setLayout(new FlowLayout());
+        this.setLayout(new BorderLayout());
         this.loadDefaultContent();        
     }
     
@@ -34,7 +35,7 @@ public class CenterPanel extends JPanel {
     
     public void setContent(JPanel content){
       this.removeAll();
-      this.add(content);
+      this.add(content, BorderLayout.CENTER);
       this.validate();
       this.repaint();
     }
