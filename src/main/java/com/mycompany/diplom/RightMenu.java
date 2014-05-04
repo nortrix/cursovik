@@ -6,9 +6,7 @@ package com.mycompany.diplom;
 
 import com.mycompany.diplom.components.CurrencyPanel;
 import com.mycompany.diplom.profile.ProfileCenterPanel;
-import com.mycompany.diplom.shop.ArticleDao;
-import com.mycompany.diplom.shop.ShopPanel;
-import com.mycompany.diplom.shop.TableModel;
+import com.mycompany.diplom.store.StorePanel;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -88,7 +86,7 @@ public class RightMenu extends JPanel{
             
             System.out.println("Обработка правой колонки " + buttonText);
             if (buttonText.equals("Магазин")) {
-                CenterPanel.getInstance().setContent(ShopPanel.getInstance());
+                CenterPanel.getInstance().setContent(new StorePanel());
             }
             if (buttonText.equals("Профили")) {
                 CenterPanel.getInstance().setContent(ProfileCenterPanel.getInstance());

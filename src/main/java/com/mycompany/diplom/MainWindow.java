@@ -27,7 +27,7 @@ public class MainWindow extends JFrame {
         this.setSize(new Dimension(1150, 600/*ApplicationProperties.getInt("main.window.width"), 
                 ApplicationProperties.getInt("main.window.height")*/));
         
-        BorderLayout layout = new BorderLayout(5, 5/*ApplicationProperties.getInt("main.window.gapW"), 
+        BorderLayout layout = new BorderLayout(0, 0/*ApplicationProperties.getInt("main.window.gapW"), 
                 ApplicationProperties.getInt("main.window.gapH")*/);
         
         this.setLayout(layout);        
