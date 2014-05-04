@@ -44,7 +44,6 @@ public class AllUsersDao {
                 userInfo.setName(name);
                 userInfo.setBalance(balance);
                 
-                System.out.println("Test");
                 allUsersInfoList.add(userInfo);
             }
             

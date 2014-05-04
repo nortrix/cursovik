@@ -14,7 +14,6 @@ public class AllUsersInfo {
     private int balance;
 
     public int getId() {
-        System.out.println("");
         return id;
     }
 

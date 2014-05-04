@@ -7,6 +7,7 @@ package com.mycompany.diplom.profile;
 import com.mycompany.diplom.CenterPanel;
 import com.mycompany.diplom.profile.authorizationpanel.AuthorizationPanel;
 import com.mycompany.diplom.profile.histogramecomparingbalances.HistogrameComparingBalances;
+import com.mycompany.diplom.profile.registration.RegistrationPanel;
 import com.mycompany.diplom.updatadatabase.UpdateDataBase;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -79,8 +80,7 @@ public class ProfileCenterPanel extends JPanel {
                 CenterPanel.getInstance().setContent(AuthorizationPanel.getInstance());
             }
             if ("Регистрация".equals(buttonText)) {
-                
-                
+                CenterPanel.getInstance().setContent(new RegistrationPanel());                
             }
             if ("Информ. активного профиля".equals(buttonText)) {
                 System.out.println("'Информ. активного профиля' button passed!");
