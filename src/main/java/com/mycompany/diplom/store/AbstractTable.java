@@ -1,6 +1,3 @@
-//*************************************************//
-//          INTHER LOGISTICS ENGINEERING           //
-//*************************************************//
 package com.mycompany.diplom.store;
 
 import com.mycompany.diplom.shop.Article;
@@ -11,7 +8,6 @@ import java.util.List;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -102,7 +98,7 @@ public abstract class AbstractTable extends JPanel
         article.getName(), article.getDescription(), article.getCost()
       });
     }
-
+    
     this.tableModel.fireTableDataChanged();
   }
 

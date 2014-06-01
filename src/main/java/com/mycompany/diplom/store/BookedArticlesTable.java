@@ -1,6 +1,3 @@
-//*************************************************//
-//          INTHER LOGISTICS ENGINEERING           //
-//*************************************************//
 
 package com.mycompany.diplom.store;
 
@@ -14,7 +11,7 @@ public class BookedArticlesTable extends AbstractTable {
   @Override
   public String getLabel()
   {
-    return "Booked";
+    return "Приобретено";
   }
 
 }

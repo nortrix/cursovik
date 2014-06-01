@@ -11,15 +11,15 @@ package com.mycompany.diplom.shop;
 public class Purchases {
     
     private Integer id;
-    private Integer shopId;
+    private Integer articleId;
     private Integer userId;
 
     public void setId(Integer id) {
         this.id = id;
     }
 
-    public void setShopId(Integer shopId) {
-        this.shopId = shopId;
+    public void setArticleId(Integer articleId) {
+        this.articleId = articleId;
     }
 
     public void setUserId(Integer userId) {
@@ -30,8 +30,8 @@ public class Purchases {
         return id;
     }
 
-    public Integer getShopId() {
-        return shopId;
+    public Integer getArticleId() {
+        return articleId;
     }
 
     public Integer getUserId() {

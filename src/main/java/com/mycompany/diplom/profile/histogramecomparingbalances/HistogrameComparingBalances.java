@@ -74,9 +74,9 @@ public class HistogrameComparingBalances extends JDialog {
     private static JFreeChart createChart(CategoryDataset dataset) {         
          // create the chart...
         JFreeChart chart = ChartFactory.createBarChart(
-             "Statistics",              // chart title
-             "Names",                   // domain axis label
-             "Value",                   // range axis label
+             "Статистика",              // chart title
+             "Профиль",                   // domain axis label
+             "Баланс",                   // range axis label
              dataset,                   // data
              PlotOrientation.VERTICAL,  // orientation
              true,                      // include legend

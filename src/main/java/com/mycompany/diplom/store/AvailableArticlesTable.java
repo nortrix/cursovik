@@ -1,7 +1,3 @@
-//*************************************************//
-//          INTHER LOGISTICS ENGINEERING           //
-//*************************************************//
-
 package com.mycompany.diplom.store;
 
 import com.mycompany.diplom.shop.ArticleDao;
@@ -22,7 +18,7 @@ public class AvailableArticlesTable extends AbstractTable {
   @Override
   public String getLabel()
   {
-    return "Shop";
+    return "Магазин";
   }
 
 }

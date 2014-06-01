@@ -5,15 +5,12 @@
 package com.mycompany.diplom;
 
 import com.mycompany.diplom.updatadatabase.UpdateDataBase;
-//import com.mycompany.diplom.util.ApplicationProperties;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-import javax.swing.BorderFactory;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,13 +21,13 @@ public class MainWindow extends JFrame {
     WindowListener exitListener;
 
     private MainWindow() {
-        this.setSize(new Dimension(1150, 600/*ApplicationProperties.getInt("main.window.width"), 
-                ApplicationProperties.getInt("main.window.height")*/));
+        this.setSize(new Dimension(1150, 600/*ApplicationProperties.getInt("main.window.width"),
+         * ApplicationProperties.getInt("main.window.height")*/));
         
         BorderLayout layout = new BorderLayout(0, 0/*ApplicationProperties.getInt("main.window.gapW"), 
                 ApplicationProperties.getInt("main.window.gapH")*/);
         
-        this.setLayout(layout);        
+        this.setLayout(layout);
         
         this.add(Header.getInstance(), BorderLayout.NORTH); //шапка
         this.add(LeftMenu.getInstance(), BorderLayout.WEST);

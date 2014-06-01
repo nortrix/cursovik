@@ -1,6 +1,8 @@
 package com.mycompany.diplom;
 
 //import com.mycompany.diplom.util.ApplicationProperties;
+import com.mycompany.diplom.screenlocker.LockFrame;
+import com.mycompany.diplom.screenlocker.ScreenWrapper;
 import com.mycompany.diplom.util.DataSource;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -36,6 +38,8 @@ public class Starter
         } catch (UnsupportedLookAndFeelException ex) {
         }
         //ApplicationProperties.init(args[0]);    //подключаю класс ApplicationProperties, который позволяет  получить путь к файлу с application.properties
+//        ScreenWrapper screenWrapper = new ScreenWrapper();
+//        screenWrapper.wrap(new LockFrame());
         MainWindow.getInstance();   //запуск GUI
         DataSource.instance();  //подключение к базе данных
     }

@@ -5,8 +5,11 @@
 package com.mycompany.diplom.profile.authorizationpanel.parentprofilecomponents;
 
 import com.mycompany.diplom.CenterPanel;
+import com.mycompany.diplom.homework.HomeworkPanel;
+import com.mycompany.diplom.profile.authorizationpanel.parentprofilecomponents.changesinprofilebalance.ProfileBalanceChangesPanel;
 import com.mycompany.diplom.profile.authorizationpanel.parentprofilecomponents.taskcreating.TaskCreatingPanel1;
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -28,12 +31,12 @@ public class ParentProfilePanel extends JPanel {
     JButton button;
     
     private ParentProfilePanel() {
-        BoxLayout boxLayout = new BoxLayout(this, BoxLayout.Y_AXIS);
+        GridLayout gridLayout = new GridLayout(0, 2, 10, 10);
         
-        this.setLayout(boxLayout);
+        this.setLayout(gridLayout);
 
         String[] subjectsArray = {"Создание задач", "Конфигурация задач", "Статистика", 
-            "Внесение изменений в баланс ребенка", "Магазин"};
+            "Внесение изменений в баланс ребенка", "Магазин", "Добавление дом. задания"};
         
         ParentProfilePanel.ButtonAction buttonsActions = new ParentProfilePanel.ButtonAction();        
         
@@ -85,9 +88,14 @@ public class ParentProfilePanel extends JPanel {
             }
             if (buttonText.equals("Внесение изменений в баланс ребенка")) {
                 System.out.println("'Внесение изменений в баланс ребенка' button passed!");
+                CenterPanel.getInstance().setContent(new ProfileBalanceChangesPanel());
             }
             if (buttonText.equals("Магазин")) {
                 System.out.println("'Магазин' button passed!");
+            }
+            if (buttonText.equals("Добавление дом. задания")) {
+                System.out.println("'Добавление дом. задания' button passed!");
+                CenterPanel.getInstance().setContent(new HomeworkPanel());
             }
             validate();
         }

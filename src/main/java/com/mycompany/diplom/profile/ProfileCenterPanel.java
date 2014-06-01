@@ -6,16 +6,17 @@ package com.mycompany.diplom.profile;
 
 import com.mycompany.diplom.CenterPanel;
 import com.mycompany.diplom.profile.authorizationpanel.AuthorizationPanel;
+import com.mycompany.diplom.profile.authorizationpanel.authorizationprofileinfo.AuthorizationProfileInfoPanel;
 import com.mycompany.diplom.profile.histogramecomparingbalances.HistogrameComparingBalances;
 import com.mycompany.diplom.profile.registration.RegistrationPanel;
 import com.mycompany.diplom.updatadatabase.UpdateDataBase;
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import javax.imageio.ImageIO;
-import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComponent;
@@ -32,9 +33,9 @@ public class ProfileCenterPanel extends JPanel {
     JButton button;
     
     private ProfileCenterPanel() {
-        BoxLayout boxLayout = new BoxLayout(this, BoxLayout.Y_AXIS);
+        GridLayout gridLayout = new GridLayout(0, 2, 10, 10);
         
-        this.setLayout(boxLayout);
+        this.setLayout(gridLayout);
 
         String[] subjectsArray = {"Войти", "Регистрация", "Информ. активного профиля", "Сравнение балансов"};
         
@@ -83,8 +84,9 @@ public class ProfileCenterPanel extends JPanel {
                 CenterPanel.getInstance().setContent(new RegistrationPanel());                
             }
             if ("Информ. активного профиля".equals(buttonText)) {
-                System.out.println("'Информ. активного профиля' button passed!");
+                CenterPanel.getInstance().setContent(new AuthorizationProfileInfoPanel());
             }
+            
             if ("Сравнение балансов".equals(buttonText)) {
                 UpdateDataBase.getInstance().updateAuthorizationUserInfo();
                 HistogrameComparingBalances histograme = new HistogrameComparingBalances();

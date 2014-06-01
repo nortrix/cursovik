@@ -29,6 +29,7 @@ public class TaskCreatingPanel1 extends JPanel {
     private JComboBox subjectsBox;
     
     private TaskCreatingPanel1() {
+        validate();
         
         JPanel panel1 = new JPanel();
         JPanel panel2 = new JPanel(new GridLayout(0, 2, 10, 10));
@@ -89,6 +90,7 @@ public class TaskCreatingPanel1 extends JPanel {
         
         ActionOfNextButton nextButtonAction = new ActionOfNextButton();
         nextButton.addActionListener(nextButtonAction);
+        validate();
     }
     
     private class ActionOfNextButton implements ActionListener{

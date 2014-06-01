@@ -4,17 +4,10 @@
  */
 package com.mycompany.diplom.profile.authorizationpanel.parentprofilecomponents.taskcreating;
 
-import com.mycompany.diplom.CenterPanel;
-import com.mycompany.diplom.LeftMenu;
-import com.mycompany.diplom.MainWindow;
-import com.mycompany.diplom.subject.Subject;
-import com.mycompany.diplom.subject.SubjectDao;
-import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -31,9 +24,9 @@ import javax.swing.JTextField;
  */
 public class SubjectCreatingPanel extends JPanel{
     
-    JTextField nameSubjectField;
-    JTextArea descriptionSubjectArea;
-    
+    private JTextField nameSubjectField;
+    private JTextArea descriptionSubjectArea;
+   
     private SubjectCreatingPanel() {
         
         BoxLayout boxLayout = new BoxLayout(this, BoxLayout.Y_AXIS);
@@ -87,17 +80,11 @@ public class SubjectCreatingPanel extends JPanel{
             System.out.println("Button passed!");
             String subjectName = nameSubjectField.getText();
             String subjectDescription = descriptionSubjectArea.getText();
-            List<Subject> subjects = SubjectDao.getInstance().findAll();
-            Long lastSubjectId = subjects.get(subjects.size() - 1).getId();
-            SubjectDao.getInstance().insertNewSubject(lastSubjectId, subjectName, subjectDescription);
- //?????????????????????????????????????????????????
-            //после создания не происходит обновления
-            CenterPanel.getInstance().setContent(TaskCreatingPanel1.getInstance());
-            LeftMenu.getInstance().repaint();
-            LeftMenu.getInstance().validate();
-            MainWindow.getInstance().validate();
+            new SubjectCreatingManager().creatingManager(subjectName, subjectDescription);
         }
+        
     }
+    
     
     private static SubjectCreatingPanel self = new SubjectCreatingPanel();
     public static SubjectCreatingPanel getInstance() {
